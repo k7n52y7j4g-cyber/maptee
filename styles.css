@@ -216,7 +216,7 @@ h1{
   backdrop-filter: blur(8px);
 }
 .contact-whatsapp p{
-  color:var(--muted);
+  color:#3b564d;
   max-width:420px;
   margin:1rem auto 2rem;
 }
@@ -338,6 +338,7 @@ h1{
     font-size:0.9rem;
   }
 }
+
 
 
 

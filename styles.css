@@ -1,3 +1,5 @@
+body{ background:red !important; }
+
 root{
   --brand:#718660;
   --text:#0b1220;
@@ -335,4 +337,5 @@ h1{
     font-size:0.9rem;
   }
 }
+
 

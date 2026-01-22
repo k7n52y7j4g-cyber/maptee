@@ -18,7 +18,7 @@ body{
   background:
     radial-gradient(circle at top right, rgba(113,134,96,0.15), transparent 40%),
     radial-gradient(circle at bottom left, rgba(186,206,156,0.25), transparent 45%),
-    linear-gradient(180deg, #f7f6f6, #f1f1f1);
+    linear-gradient(180deg, #e8e6da, #e8e6da);
 }
 
 /* Container */
@@ -86,7 +86,7 @@ body{
   cursor:pointer;
 }
 .nav-toggle:hover{
-  background:#667a55;
+  background:#3b564d;
   transform:translateY(-1px);
   box-shadow:0 6px 14px rgba(11,18,32,.12);
 }
@@ -135,7 +135,9 @@ body{
 h1{
   text-align:center;
   font-style:italic;
-  text-shadow: #718660 1px 1px 2px;
+  text-shadow: #3b564d 1px 1px 2px;
+  color:#3b564d;
+  margin-bottm:1rem;
 }
 .lead{
   color:var(--muted);
@@ -344,6 +346,7 @@ h3{
     font-size:0.9rem;
   }
 }
+
 
 
 

@@ -76,7 +76,7 @@ body{
 }
 .nav-toggle{
   display:none;
-  background:var(--brand);
+  background:#3b564d;
   color:#fff;
   border:0;
   padding:.55rem 1.1rem;
@@ -144,7 +144,7 @@ h1{
 }
 .btn{
   background:#3b564d;
-  color:#ede4e4;
+  color:#e8e6da;
   padding:.6rem 1.2rem;
   border-radius:6px;
   text-decoration:none;
@@ -346,6 +346,7 @@ h3{
     font-size:0.9rem;
   }
 }
+
 
 
 

@@ -229,8 +229,9 @@ h3{
   max-width:420px;
   margin:1rem auto 2rem;
 }
-.whatsapp-btn{padding:.9rem 2rem; font-size:1rem;
-             color:#e8e6da}
+.whatsapp-btn{padding:.9rem 2rem; 
+              font-size:1rem;
+              color:#e8e6da;}
 .contact-whatsapp small{display:block; margin-top:1rem; opacity:.7;}
 
 /* About video */
@@ -347,6 +348,7 @@ h3{
     font-size:0.9rem;
   }
 }
+
 
 
 

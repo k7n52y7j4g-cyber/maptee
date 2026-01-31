@@ -350,21 +350,38 @@ h3{
 }
 /* --- التعديلات الجديدة للهيدر وسكشن الحجز --- */
 
-/* تنسيق زر الحجز في الهيدر */
+/* تنسيق زر الحجز في الهيدر - نسخة معدلة للوضوح */
 .nav-booking-btn {
-    background: var(--brand);
+    background-color: #3b564d !important; /* لون البراند الغامق ليبرز فوق الخلفية الفاتحة */
     color: #e8e6da !important; /* لون النص الفاتح */
     padding: 0.5rem 1.2rem;
-    border-radius: 999px; /* جعل الزر دائري الأطراف */
+    border-radius: 8px; /* متناسق مع الـ radius الخاص بموقعك */
     transition: all 0.3s ease;
     font-size: 0.95rem;
     display: inline-block;
+    text-decoration: none;
+    border: none;
+    font-weight: 700;
 }
 
 .nav-booking-btn:hover {
-    background: #3b564d; /* تغميق اللون عند الهوفر */
+    background-color: var(--brand) !important; /* يتغير للون الأخضر الفاتح عند التأشير */
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(113, 134, 96, 0.3);
+    box-shadow: 0 4px 10px rgba(59, 86, 77, 0.2);
+}
+
+/* تعديل بسيط للموبايل حتى ما يختفي الزر داخل القائمة */
+@media(max-width: 640px) {
+    .primary-nav ul li {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-booking-btn {
+        display: block; /* يأخذ العرض الكامل في الموبايل */
+        margin: 0 auto;
+    }
+}
 }
 
 /* تنسيق سكشن جدول المواعيد */
@@ -413,6 +430,55 @@ h3{
     .calendly-inline-widget {
         height: 950px; /* زيادة الارتفاع في الموبايل لتقليل السكرول الداخلي */
     }
+}
+/* تعديل قائمة الموبايل لتناسب ألوان الهوية */
+@media(max-width:640px){
+  .primary-nav {
+    display: none;
+    margin-top: 1rem;
+    /* تغيير الخلفية للون البيج الخاص بالشركة بدل الأبيض */
+    background: #e8e6da !important; 
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(59, 86, 77, 0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+
+  .primary-nav.open {
+    display: block !important;
+  }
+
+  .primary-nav ul {
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    gap: 0; /* سنعتمد على padding العناصر */
+    padding: 0;
+    align-items: center;
+  }
+
+  .primary-nav ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(59, 86, 77, 0.05); /* خط بسيط بين الخيارات */
+  }
+
+  .primary-nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  .primary-nav a {
+    display: block;
+    padding: 1rem;
+    color: #3b564d !important; /* لون الخط الغامق الخاص بالشركة */
+    font-weight: 600;
+  }
+
+  /* تنسيق خاص لزر الحجز داخل قائمة الموبايل */
+  .primary-nav .nav-booking-btn {
+    margin: 1rem 0;
+    background-color: #3b564d !important;
+    color: #e8e6da !important;
+    border-radius: 12px;
+  }
 }
 
 

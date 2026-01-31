@@ -348,6 +348,72 @@ h3{
     font-size:0.9rem;
   }
 }
+/* --- التعديلات الجديدة للهيدر وسكشن الحجز --- */
+
+/* تنسيق زر الحجز في الهيدر */
+.nav-booking-btn {
+    background: var(--brand);
+    color: #e8e6da !important; /* لون النص الفاتح */
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px; /* جعل الزر دائري الأطراف */
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: inline-block;
+}
+
+.nav-booking-btn:hover {
+    background: #3b564d; /* تغميق اللون عند الهوفر */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(113, 134, 96, 0.3);
+}
+
+/* تنسيق سكشن جدول المواعيد */
+.booking-calendar {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.booking-calendar h2 {
+    color: #3b564d;
+    margin-bottom: 0.5rem;
+}
+
+.booking-calendar p {
+    color: var(--muted);
+    margin-bottom: 2rem;
+}
+
+/* ضبط حاوية Calendly لتكون متجاوبة */
+.calendly-inline-widget {
+    min-width: 320px;
+    height: 700px; /* الارتفاع الافتراضي المناسب */
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(113, 134, 96, 0.2);
+}
+
+/* تحسينات الهيدر للموبايل */
+@media(max-width: 640px) {
+    .primary-nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .nav-booking-btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .calendly-inline-widget {
+        height: 950px; /* زيادة الارتفاع في الموبايل لتقليل السكرول الداخلي */
+    }
+}
 
 
 

@@ -2,14 +2,36 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta property="og:image" content="https://maptee.agency/image/logo.png">
-  <title>وكالة تسويق في Iraq | Maptee Agency</title>
+
+  <title>وكالة تسويق في العراق | Maptee Agency</title>
   <meta name="description" content="Maptee Agency وكالة تسويق في العراق تقدم خطط تسويقية، هوية بصرية، وإدارة حملات لرفع مبيعات مشروعك. احجز استشارة مجانية الآن.">
-  <meta name="keywords" content="وكالة تسويق, تسويق رقمي, شركة تسويق في العراق, تسويق مشاريع">
-  <link rel="canonical" href="https://maptee.agency">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="keywords" content="وكالة تسويق في العراق, شركة تسويق, تسويق رقمي, إدارة حملات, استشارات تسويقية">
+  <meta name="author" content="Maptee Agency">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maptee.agency">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="وكالة تسويق في العراق | Maptee Agency">
+  <meta property="og:description" content="نساعدك تحقق نمو حقيقي من خلال استراتيجيات تسويقية وخدمات إبداعية.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maptee.agency">
+  <meta property="og:image" content="https://maptee.agency/image/logo.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MarketingAgency",
+    "name": "Maptee Agency",
+    "url": "https://maptee.agency",
+    "logo": "https://maptee.agency/image/logo.png",
+    "areaServed": "Iraq"
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -26,15 +48,17 @@
       <img src="image/logo.png" alt="Maptee Agency – وكالة تسويق في العراق" class="logo">
       <span class="brand-text">MAPTEE <small>MARKETING AGENCY</small></span>
     </a>
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
 
     <nav id="primary-nav" class="primary-nav">
       <ul>
         <li><a href="#services">خدماتنا</a></li>
         <li><a href="#work">العمل</a></li>
         <li><a href="#about-video">من نحن</a></li>
-        <li><a href="#booking" class="nav-booking-btn">احجز استشارة</a></li>
+        <li><a href="#team">فريق العمل</a></li>
         <li><a href="#contact">تواصل معنا</a></li>
       </ul>
+      <a class="btn" href="#booking">احجز استشارتك المجانية</a>
     </nav>
   </div>
 </header>
@@ -120,14 +144,15 @@
 <section id="team" class="team container">
   <h2>فريق العمل</h2>
   <div class="team-grid">
-    <div class="team-member"><img src="image/ibrahem.png.png" alt="ابراهيم"><h3>Dr. Ibrahim</h3><p>Personal Relation & Marketing Manager</p></div>
-    <div class="team-member"><img src="image/dalal.JPG" alt="دلال"><h3>DR. Dalal</h3><p>Copy writer</p></div>
-    <div class="team-member"><img src="image/amar.jpeg" alt="محمد عمار"><h3>Dr. Muhammad Ammar</h3><p>Camera man</p></div>
-    <div class="team-member"><img src="image/anas.jpg" alt="انس"><h3>Anas Salih</h3><p>Social Media coordinator</p></div>
-    <div class="team-member"><img src="image/ahmed.png" alt="احمد"><h3>Ahmed Bashar</h3><p>Sales assistant & website developer</p></div>
-    <div class="team-member"><img src="image/faris.png" alt="محمد فارس"><h3>Dr. Mohmmed Faris</h3><p>Graphic designer</p></div>
-    <div class="team-member"><img src="image/ISLAM.PNG" alt="اسلام"><h3>Islam Salih</h3><p>CEO</p></div>
-  </div>
+    <div class="team-member"><img src="image/ibrahem.png.png" alt="ابراهيم" loading="lazy"><h3>Dr. Ibrahim</h3><p>Personal Relation & Marketing Manager</p></div>
+    <div class="team-member"><img src="image/dalal.JPG" alt="دلال" loading="lazy"><h3>DR. Dalal</h3><p>Copy writer</p></div>
+    <div class="team-member"><img src="image/amar.jpeg" alt="محمد عمار" loading="lazy"><h3>Dr. Muhammad Ammar</h3><p>Camera man</p></div>
+    <div class="team-member"><img src="image/anas.jpg" alt="انس" loading="lazy"><h3>Anas Salih</h3><p>Social Media coordinator</p></div>
+    <div class="team-member"><img src="image/ahmed.png" alt="احمد" loading="lazy"><h3>Ahmed Bashar</h3><p>Sales assistant & website developer</p></div>
+    <div class="team-member"><img src="image/faris.png" alt="محمد فارس" loading="lazy"><h3>Dr. Mohmmed Faris</h3><p>Graphic designer</p></div>
+    <div class="team-member"><img src="image/ISLAM.PNG" alt="اسلام" loading="lazy"><h3>Islam Salih</h3><p>CEO</p></div>
+ <div class="team-member"><img src="image/shantoha.png" alt="شنطوحه" loading="lazy"><h3>shantoha</h3><p>Human Resources</p></div>  
+</div>
 </section>
 
 <section id="booking" class="booking-calendar container">
@@ -154,7 +179,13 @@
     <small>© <span id="year"></span> وكالة خارطتي — نحول أفكارك لمشاريع عظيمة</small>
   </div>
 </footer>
+<script>
+const toggle = document.getElementById("navToggle");
+const nav = document.getElementById("primary-nav");
 
-<script src="js/main.js"></script>
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+</script>
 </body>
 </html>

@@ -165,55 +165,7 @@ h1{
 h3{
   padding-bottom:5px;
 }
-.project{ 
-  position: relative;
-  overflow: hidden;
-  background:#b6c39a;
-  background:linear-gradient(16deg,rgba(182,195,154,25%),rgba(247,246,246)25%);
-  border:1px solid rgba(133,193,144);
-  padding:1rem;
-  border-radius:6px;
-  z-index: 1;
-}
-.project::before{
-  content:'';
-  position:absolute;
-  position: absolute;
-  inset: 0;
-  background:rgba(182,195,154);
- transform: scaleX(0);
-transform-origin:left ;
-transition: transform 0.6s ease;
-z-index: -1;
-}
-.project::after{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-60%;
-  width:40%;
-  height:100%;
-  background:linear-gradient(160deg,transparent,rgba(255,255,255,0.6),transparent);
-  transform: skewX(-20deg);
-  opacity: 0;
-}
-.project:hover::before{
-  transform: scaleX(1);
-}
-.project:hover::after{
-animation: shine 0.8s ease
-forwords;
-}
-@keyframes shine{
-  from{
-    left:-60%;
-    opacity:1;
-  }
-to{
-  left:120%;
-  opcity:0;
-}
-}
+
 /* Responsive Grids */
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:640px){.grid{grid-template-columns:1fr;}}
@@ -649,6 +601,7 @@ to{
     opacity: 0;
   }
 }
+
 
 
 

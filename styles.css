@@ -1,5 +1,4 @@
-
-root{
+﻿:root{
   --brand:#718660;
   --text:#0b1220;
   --muted:#718660;
@@ -11,7 +10,7 @@ root{
 /* Reset */
 *{box-sizing:border-box; margin:0; padding:0;}
 body{
-  font-family:system-ui, sans-serif;
+  font-family:'Cairo', system-ui, sans-serif;
   color:var(--text);
   line-height:1.6;
   background:
@@ -55,64 +54,124 @@ body{
 }
 
 /* Header */
+.site-header{
+  width:100%;
+  position:relative;
+  z-index:1000;
+  background:transparent;
+  padding:1rem;
+  top:0;
+}
 .header-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:1rem;
+  max-width:var(--container);
+  margin:auto;
 }
 
 /* Nav */
+.primary-nav{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+}
 .primary-nav ul{
   display:flex;
-  gap:1rem;
+  gap:2rem;
   list-style:none;
-  padding:0 0 0 15px;
+  padding:0;
+  margin:0;
   font-weight:600;
-  font-size:1.1rem
+  font-size:1rem;
 }
 .primary-nav a{
   text-decoration:none;
   color:var(--text);
+  transition:color 0.3s ease;
+  display:block;
+}
+.primary-nav a:hover{
+  color:#3b564d;
+  font-weight:700;
 }
 .nav-toggle{
   display:none;
+  background:#3b564d;
   color:#fff;
-  border:0;
-  padding:.55rem 1.1rem;
-  border-radius:999px;
-  font-size:.9rem;
+  border:none;
+  padding:0.6rem 1rem;
+  border-radius:6px;
+  font-size:1.5rem;
   font-weight:600;
   cursor:pointer;
+  transition:all 0.3s ease;
+  z-index:1001;
 }
 .nav-toggle:hover{
-  background:#3b564d;
-  transform:translateY(-1px);
-  box-shadow:0 6px 14px rgba(11,18,32,.12);
+  background:#2a3a33;
+  transform:scale(1.05);
 }
-.nav-toggle {
-  display: none !important;
-}
-.nav-toggle:active{
-  transform:translateY(0);
-  box-shadow:0 3px 8px rgba(11,18,32,.15);
-}
-.primary-nav {
-  display: block !important; /* تظهر دائمًا */
-  margin-top: 1rem;
-  background: transparent; /* أو حسب تصميمك */
+.nav-toggle.active{
+  background:#2a3a33;
 }
 
-/* Mobile nav */
-@media(max-width:640px){
-  .nav-toggle{display:block;}
+/* Mobile nav responsive */
+@media(max-width:768px){
+  .nav-toggle{
+    display:block;
+  }
+  
   .primary-nav{
     display:none;
-    margin-top:1rem;
-    background:#f7f6f6;
-    padding:1rem;
-    border-radius:12px;
+    position:fixed;
+    top:80px;
+    right:0;
+    left:0;
+    width:100%;
+    flex-direction:column;
+    background:#e8e6da;
+    padding:1.5rem;
+    margin:0;
+    gap:0;
+    box-shadow:0 8px 15px rgba(0,0,0,0.2);
+    max-height:calc(100vh - 80px);
+    overflow-y:auto;
   }
-  .primary-nav.open{display:block;}
+  
+  .primary-nav.open{
+    display:flex;
+  }
+  
+  .primary-nav ul{
+    flex-direction:column;
+    gap:0;
+    width:100%;
+    margin:0;
+    padding:0;
+  }
+  
+  .primary-nav ul li{
+    width:100%;
+    text-align:center;
+    border-bottom:1px solid rgba(59,86,77,0.1);
+  }
+  
+  .primary-nav ul li:last-child{
+    border-bottom:none;
+  }
+  
+  .primary-nav a{
+    padding:1rem;
+    color:#3b564d;
+    font-weight:600;
+  }
+  
+  .primary-nav a:hover{
+    background:rgba(113,134,96,0.1);
+    border-radius:6px;
+  }
 }
 
 /* Hero */
@@ -122,24 +181,30 @@ body{
   background:linear-gradient(135deg, rgba(113,134,96,0.12), rgba(186,206,156,0.12));
   border-bottom-left-radius:40px;
   border-bottom-right-radius:40px;
-  .hero-inner .lead {
-  margin-bottom: 1.5rem; /* المسافة بين النص والزر */
 }
-
+.hero-inner .lead {
+  margin-bottom: 1.5rem;
+}
 .hero-inner .btn {
-  margin-top: 0.5rem; /* المسافة فوق الزر */
-}
-
+  margin-top: 0.5rem;
 }
 h1{
   text-align:center;
-  font-style:italic;
+  font-family:'Amiri', serif;
+  font-style:normal;
   text-shadow: #3b564d 1px 1px 2px;
   color:#3b564d;
   margin-bottom:1rem;
+  font-size:2rem;
+}
+@media(max-width:640px){
+  h1{
+    font-size:1.5rem;
+  }
 }
 .lead{
   color:var(--muted);
+  font-size:1.1rem;
 }
 .btn{
   background:#3b564d;
@@ -149,21 +214,109 @@ h1{
   text-decoration:none;
   border:none;
   cursor:pointer;
+  transition:all 0.3s ease;
+  font-weight:600;
+  display:inline-block;
+}
+.btn:hover{
+  background:#2a3a33;
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(59,86,77,0.2);
 }
 
 /* Grid & Cards */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:1rem;
+  gap:1.5rem;
+  margin-top:2rem;
 }
 .card{
-  background:rgba(182,195,154,25%);
+  background:rgba(182,195,154,0.25);
   padding:1.5rem;
-  border-radius:25px;
+  border-radius:16px;
+  transition:all 0.3s ease;
+  border:1px solid rgba(113,134,96,0.15);
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(113,134,96,0.15);
+  background:rgba(182,195,154,0.35);
+}
+h2{
+  text-align:center;
+  color:#3b564d;
+  font-size:2rem;
+  margin-bottom:1rem;
 }
 h3{
   padding-bottom:5px;
+  color:#3b564d;
+}
+
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  z-index:2000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  overflow:auto;
+  animation:fadeIn 0.3s ease;
+}
+.modal.show{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+.modal-content{
+  background:#f7f6f6;
+  padding:2.5rem;
+  border-radius:20px;
+  width:90%;
+  max-width:450px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  animation:slideUp 0.3s ease;
+  position:relative;
+}
+@keyframes slideUp{
+  from{transform:translateY(50px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+.close{
+  position:absolute;
+  right:1.5rem;
+  top:1rem;
+  font-size:2rem;
+  font-weight:bold;
+  color:#3b564d;
+  cursor:pointer;
+  transition:color 0.3s ease;
+}
+.close:hover{
+  color:#2a3a33;
+}
+.modal-content h2{
+  text-align:right;
+  margin-bottom:1.5rem;
+  font-size:1.5rem;
+}
+.modal-content p{
+  text-align:center;
+  margin-bottom:1.5rem;
+}
+@media(max-width:640px){
+  .modal-content{
+    width:95%;
+    padding:2rem;
+  }
 }
 
 /* Responsive Grids */
@@ -199,10 +352,10 @@ h3{
 .floating-shapes span:nth-child(2){top:65%; left:70%; animation: floatB 26s infinite;}
 .floating-shapes span:nth-child(3){top:40%; left:45%; animation: floatC 24s infinite;}
 .floating-shapes span:nth-child(4){top:80%; left:30%; animation: floatD 28s infinite;}
-@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,-40px)}}
-@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,30px)}}
-@keyframes floatC{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,50px)}}
-@keyframes floatD{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,-30px)}}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(90px,-70px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-80px,60px)}}
+@keyframes floatC{0%,100%{transform:translate(0,0)}50%{transform:translate(70px,80px)}}
+@keyframes floatD{0%,100%{transform:translate(0,0)}50%{transform:translate(-90px,-60px)}}
 
 /* WhatsApp section */
 .contact-whatsapp{
@@ -219,9 +372,11 @@ h3{
   max-width:420px;
   margin:1rem auto 2rem;
 }
-.whatsapp-btn{padding:.9rem 2rem; 
-              font-size:1rem;
-              color:#e8e6da;}
+.whatsapp-btn{
+  padding:.9rem 2rem; 
+  font-size:1rem;
+  color:#e8e6da;
+}
 .contact-whatsapp small{display:block; margin-top:1rem; opacity:.7;}
 
 /* About video */
@@ -245,45 +400,17 @@ h3{
 
 /* Team */
 .team{text-align:center;}
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:2rem;
-  margin-top:2rem;
-}
-.team-member{
-  background:rgba(255,255,255,0.5);
-  padding:2rem 1rem;
-  border-radius:20px;
-  backdrop-filter: blur(6px);
-}
-.team-member img{
-  width:120px;
-  height:120px;
-  object-fit:cover;
-  border-radius:50%;
-  margin-bottom:1rem;
-  border:3px solid var(--brand);
-}
-.team-member h3{margin:.5rem 0 .2rem;}
-.team-member p{margin:0; color:var(--muted); font-size:.9rem;}
-@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.team-grid{grid-template-columns:1fr;}}
-
-/* Compare Table - Responsive حقيقي */
+/* Compare Table */
 .compare h2{
   text-align:center;
   margin-bottom:2rem;
 }
-
 .compare-table{
   border-radius:var(--radius);
   overflow:hidden;
   box-shadow:0 10px 30px rgba(0,0,0,.05);
   width:100%;
 }
-
-/* صفوف الجدول */
 .compare-row{
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
@@ -291,90 +418,46 @@ h3{
   background:#f7f6f6;
   border-bottom:1px solid #e1e1e1;
 }
-
 .compare-row > div{
   padding:1rem;
   text-align:center;
-  word-break: break-word; /* يحافظ على النصوص الطويلة */
+  word-break: break-word;
 }
-
 .compare-row > div:first-child{
   text-align:right;
   font-weight:500;
 }
-
-/* رأس الجدول */
 .compare-row.head{
   background:#bace9c;
   font-weight:700;
 }
-
 .compare-row.head small{
   font-weight:400;
   font-size:.75rem;
 }
-
-/* ✅❌ */
 .yes{color:#2e7d32; font-size:1.2rem;}
 .no{color:#c62828; font-size:1.2rem;}
 
-/* Responsive for tablets */
 @media(max-width:900px){
   .compare-row{
-    grid-template-columns:2fr 1fr 1fr; /* نفس الأعمدة بس أصغر */
+    grid-template-columns:2fr 1fr 1fr;
   }
   .compare-row > div{
     padding:0.8rem;
   }
 }
 
-/* Responsive for mobile */
 @media(max-width:640px){
   .compare-row{
-    grid-template-columns:1fr 1fr 1fr; /* 3 أعمدة مساوية */
+    grid-template-columns:1fr 1fr 1fr;
   }
   .compare-row > div{
     padding:0.6rem;
     font-size:0.9rem;
   }
 }
-/* --- التعديلات الجديدة للهيدر وسكشن الحجز --- */
 
-/* تنسيق زر الحجز في الهيدر - نسخة معدلة للوضوح */
-.nav-booking-btn {
-    background-color: #3b564d !important; /* لون البراند الغامق ليبرز فوق الخلفية الفاتحة */
-    color: #e8e6da !important; /* لون النص الفاتح */
-    padding: 0.5rem 1.2rem;
-    border-radius: 8px; /* متناسق مع الـ radius الخاص بموقعك */
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    display: inline-block;
-    text-decoration: none;
-    border: none;
-    font-weight: 700;
-}
-
-.nav-booking-btn:hover {
-    background-color: var(--brand) !important; /* يتغير للون الأخضر الفاتح عند التأشير */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(59, 86, 77, 0.2);
-}
-
-/* تعديل بسيط للموبايل حتى ما يختفي الزر داخل القائمة */
-@media(max-width: 640px) {
-    .primary-nav ul li {
-        margin-bottom: 10px;
-        width: 100%;
-        text-align: center;
-    }
-    .nav-booking-btn {
-        display: block; /* يأخذ العرض الكامل في الموبايل */
-        margin: 0 auto;
-    }
-}
-
-
-/* تنسيق سكشن جدول المواعيد */
+/* Booking Calendar */
 .booking-calendar {
     text-align: center;
     padding: 4rem 1rem;
@@ -395,224 +478,314 @@ h3{
     margin-bottom: 2rem;
 }
 
-/* ضبط حاوية Calendly لتكون متجاوبة */
 .calendly-inline-widget {
     min-width: 320px;
-    height: 700px; /* الارتفاع الافتراضي المناسب */
+    height: 700px;
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid rgba(113, 134, 96, 0.2);
 }
 
-/* تحسينات الهيدر للموبايل */
 @media(max-width: 640px) {
-    .primary-nav ul {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1rem;
-    }
-    
-    .nav-booking-btn {
-        text-align: center;
-        width: 100%;
-    }
-
     .calendly-inline-widget {
-        height: 950px; /* زيادة الارتفاع في الموبايل لتقليل السكرول الداخلي */
+        height: 950px;
     }
 }
-/* تعديل قائمة الموبايل لتناسب ألوان الهوية */
-@media(max-width:640px){
-  .primary-nav {
-    display: none;
-    margin-top: 1rem;
-    /* تغيير الخلفية للون البيج الخاص بالشركة بدل الأبيض */
-    background: #e8e6da !important; 
-    padding: 1.5rem;
-    border-radius: 20px;
-    border: 1px solid rgba(59, 86, 77, 0.1);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  }
 
-  .primary-nav.open {
-    display: block !important;
-  }
-
-  .primary-nav ul {
-    flex-direction: column; /* ترتيب العناصر عمودياً */
-    gap: 0; /* سنعتمد على padding العناصر */
-    padding: 0;
-    align-items: center;
-  }
-
-  .primary-nav ul li {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid rgba(59, 86, 77, 0.05); /* خط بسيط بين الخيارات */
-  }
-
-  .primary-nav ul li:last-child {
-    border-bottom: none;
-  }
-
-  .primary-nav a {
-    display: block;
-    padding: 1rem;
-    color: #3b564d !important; /* لون الخط الغامق الخاص بالشركة */
-    font-weight: 600;
-  }
-
-  /* تنسيق خاص لزر الحجز داخل قائمة الموبايل */
-  .primary-nav .nav-booking-btn {
-    margin: 1rem 0;
-    background-color: #3b564d !important;
-    color: #e8e6da !important;
-    border-radius: 12px;
-  }
+/* Work section - Goals */
+.work{text-align:center;}
+.team-subtitle{
+  color:var(--muted);
+  font-size:1.1rem;
+  margin-bottom:2rem;
 }
-/* =========================
-   NAVBAR FIX
-========================= */
-
-.site-header{
-  width:100%;
+.goals-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+  margin-top:2rem;
+  margin-bottom:2rem;
+}
+.goal-card{
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(8px);
+  padding:2.5rem 2rem;
+  border-radius:20px;
+  border:2px solid rgba(113,134,96,0.2);
+  transition:all 0.3s ease;
+  cursor:pointer;
+  text-align:center;
   position:relative;
-  z-index:1000;
+  overflow:hidden;
+}
+.goal-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgba(59,86,77,0.2);
+  border-color:rgba(113,134,96,0.5);
+  background:rgba(255,255,255,0.8);
+}
+.goal-icon{
+  font-size:3rem;
+  margin-bottom:1rem;
+  animation:bounce 0.6s ease-in-out;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.goal-card h3{
+  color:#3b564d;
+  font-size:1.3rem;
+  margin-bottom:0.8rem;
+}
+.goal-card p{
+  color:#718660;
+  font-size:0.95rem;
+  margin-bottom:1rem;
+  line-height:1.5;
+}
+.arrow{
+  display:inline-block;
+  font-size:1.5rem;
+  color:#3b564d;
+  transition:transform 0.3s ease;
+}
+.goal-card:hover .arrow{
+  transform:translateX(5px);
+}
+@media(max-width:1024px){
+  .goals-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:640px){
+  .goals-grid{
+    grid-template-columns:1fr;
+  }
 }
 
-.header-inner{
+/* Goal Modal */
+.goal-modal-header{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
+  gap:2rem;
+  margin-bottom:2rem;
+  padding-bottom:1.5rem;
+  border-bottom:2px solid rgba(113,134,96,0.2);
+}
+.goal-modal-icon{
+  font-size:4rem;
+}
+.goal-modal-header h2{
+  text-align:right;
+  margin:0;
+  color:#3b564d;
+}
+.goal-description{
+  color:#0b1220;
+  font-size:1rem;
+  line-height:1.8;
+  margin-bottom:2rem;
+  text-align:right;
+}
+.goal-features{
+  background:rgba(113,134,96,0.1);
+  padding:1.5rem;
+  border-radius:12px;
+  margin-bottom:2rem;
+  text-align:right;
+}
+.goal-features h4{
+  color:#3b564d;
+  margin-bottom:1rem;
+}
+.goal-features ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.goal-features li{
+  padding:0.5rem 0;
+  padding-right:2rem;
+  color:#0b1220;
+  position:relative;
+}
+.goal-features li:before{
+  content:"✓";
+  position:absolute;
+  right:0;
+  color:#718660;
+  font-weight:bold;
+}
+.goal-modal-footer{
+  display:flex;
   gap:1rem;
+  justify-content:center;
+  margin-top:2rem;
+}
+.btn-outline{
+  background:transparent;
+  color:#3b564d;
+  padding:.6rem 1.2rem;
+  border:2px solid #3b564d;
+  border-radius:6px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  font-weight:600;
+  font-size:1rem;
+}
+.btn-outline:hover{
+  background:#3b564d;
+  color:#e8e6da;
 }
 
-/* القائمة */
-.primary-nav{
-  display:flex;
-  align-items:center;
-  gap:1.5rem;
-  flex-wrap:wrap;
+/* Team section - Interactive design */
+.team{text-align:center;}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:2rem;
+  margin-top:2rem;
 }
-
-.primary-nav a{
-  text-decoration:none;
-  color:var(--text);
-  font-weight:500;
-  transition:.3s;
+.team-member{
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  height:350px;
+  transition:all 0.3s ease;
+  background:rgba(255,255,255,0.5);
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
-
-.primary-nav a:hover{
-  color:var(--brand);
+.team-member:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(59,86,77,0.2);
 }
-
-/* زر تواصل معنا */
-.primary-nav .btn,
-.primary-nav .a.btn{
-  background:var(--brand);
-  color:#fff !important;
-  padding:.7rem 1.4rem;
-  border-radius:var(--radius);
+.team-member img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:all 0.4s ease;
+}
+.team-member:hover img{
+  filter:brightness(0.4) blur(2px);
+}
+.team-info{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:linear-gradient(180deg, transparent, rgba(59,86,77,0.95));
+  color:#fff;
+  padding:1.5rem;
+  text-align:center;
+  transition:all 0.3s ease;
+}
+.team-member h3{
+  color:#fff;
+  font-size:1.2rem;
+  margin:0 0 0.3rem 0;
+  padding:0;
+}
+.team-info .role{
+  color:#e8e6da;
+  font-size:0.85rem;
+  margin:0;
+  opacity:0.9;
+}
+.team-overlay{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  opacity:0;
+  transition:opacity 0.3s ease;
+  text-align:center;
+}
+.team-member:hover .team-overlay{
+  opacity:1;
+}
+.view-more{
+  background:#718660;
+  color:#fff;
+  padding:0.7rem 1.5rem;
+  border-radius:20px;
   font-weight:600;
   display:inline-block;
-  transition:.3s;
+  transition:all 0.3s ease;
+}
+.team-member:hover .view-more{
+  background:#e8e6da;
+  color:#3b564d;
+}
+@media(max-width:1024px){
+  .team-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+@media(max-width:768px){
+  .team-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+@media(max-width:600px){
+  .team-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-.primary-nav .btn:hover{
-  opacity:.85;
+/* Team Modal */
+.team-modal-body{
+  display:flex;
+  gap:2rem;
+  align-items:flex-start;
 }
-
-/* موبايل */
-@media (max-width:768px){
-
-  .header-inner{
+.team-modal-img{
+  width:200px;
+  height:200px;
+  border-radius:12px;
+  object-fit:cover;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+.team-modal-info{
+  flex:1;
+  text-align:right;
+}
+.team-modal-info h2{
+  color:#3b564d;
+  margin:0 0 0.5rem 0;
+  text-align:right;
+}
+.team-modal-role{
+  color:#718660;
+  font-weight:600;
+  font-size:1.1rem;
+  margin-bottom:1rem;
+}
+.team-modal-bio{
+  color:#0b1220;
+  line-height:1.8;
+  font-size:0.95rem;
+}
+@media(max-width:640px){
+  .team-modal-body{
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
   }
-
-  .primary-nav{
-    width:100%;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .primary-nav .btn{
-    width:100%;
+  .team-modal-info{
     text-align:center;
   }
 }
-.project {
-  position: relative;
-  overflow: hidden;
-   background: linear-gradient(16deg, rgb(182, 195, 154) 25%, rgb(247, 246, 246) 25%);
-  border: 1px solid rgb(133, 193, 144);
-  padding: 1rem;
-  border-radius: 6px;
-  z-index: 1;
+
+/* Site Footer */
+.site-footer{
+  text-align:center;
+  padding:2rem 1rem;
+  background:rgba(113,134,96,0.1);
+  border-top:1px solid rgba(113,134,96,0.2);
+  margin-top:2rem;
 }
-
-/ هاي لتعبة اللون /
-.project::before {
-  content: “”;
-  position: absolute;
-  inset: 0;
-  background: rgb(182, 195, 154);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.6s ease;
-  z-index: -1;
+.footer-inner{
+  text-align:center;
+  color:#718660;
 }
-
-/ هاي اللمعة /
-.project::after {
-  content: “”;
-  position: absolute;
-  top: 0;
-  left: -60%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(
-    160deg,
-    transparent,
-    rgba(255, 255, 255, 0.6),
-    transparent
-  );
-  transform: skewX(-20deg);
-  opacity: 0;
-}
-
-/ hover /
-.project:hover::before {
-  transform: scaleX(1);
-}
-
-.project:hover::after {
-  animation: shine 0.8s ease forwards;
-}
-
-@keyframes shine {
-  from {
-    left: -60%;
-    opacity: 1;
-  }
-  to {
-    left: 120%;
-    opacity: 0;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

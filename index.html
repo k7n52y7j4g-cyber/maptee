@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Maptee Agency | وكالة تسويق في العراق">
   <meta property="og:description" content="نساعدك تزيد مبيعات مشروعك بخطط تسويقية احترافية وإدارة حملات مدفوعة.">
-  <meta property="og:image" content="https://maptee.agency/image/logo.png">
+  <meta property="og:image" content="images/logo.png">
   <meta property="og:url" content="https://maptee.agency">
   <meta property="og:locale" content="ar_IQ">
 
@@ -24,10 +24,15 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Maptee Agency | وكالة تسويق في العراق">
   <meta name="twitter:description" content="خطط تسويقية احترافية لزيادة مبيعات مشروعك في العراق.">
-  <meta name="twitter:image" content="https://maptee.agency/image/logo.png">
+  <meta name="twitter:image" content="images/logo.png">
 
-  <!-- Favicon (مهم جداً للثقة) -->
-  <link rel="icon" type="image/png" href="https://maptee.agency/image/logo.png">
+  <!-- Favicon (مهم ) -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- Google Fonts - خطوط عربية جميلة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Structured Data (Schema Markup) -->
   <script type="application/ld+json">
@@ -36,14 +41,14 @@
     "@type": "MarketingAgency",
     "name": "Maptee Agency",
     "url": "https://maptee.agency",
-    "logo": "https://maptee.agency/image/logo.png",
+    "logo": "images/logo.png",
     "description": "وكالة تسويق في العراق تقدم خدمات التسويق الرقمي وإدارة الحملات الإعلانية.",
     "areaServed": {
       "@type": "Country",
       "name": "Iraq"
     }
   }
-  </script>
+  </script> 
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -59,7 +64,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/">
-      <img src="image/logo.png" loading="lazy" alt="Maptee Agency – وكالة تسويق في العراق" class="logo">
+      <img src="images/logo.png" loading="lazy" alt="Maptee Agency – وكالة تسويق في العراق" class="logo">
       <span class="brand-text">MAPTEE <small>MARKETING AGENCY</small></span>
     </a>
 
@@ -105,16 +110,49 @@
     </article>
   </div>
 </section>
-
 <section id="work" class="work container">
   <h2>اختر هدفك من الاستشارة</h2>
-  <div class="grid">
-    <div class="project">استشارة تسويقية</div>
-    <div class="project">استشارة ريادية (ريادة أعمال)</div>
-    <div class="project">Personal Branding / هوية شخصية</div>
+  <div class="goals-grid">
+    <div class="goal-card" onclick="openGoalModal('تسويقية', 'استشارة تسويقية متخصصة', 'هل تريد زيادة مبيعاتك؟ نساعدك تحدد الاستراتيجية الصحيحة لوصول عميلك المثالي من خلال: تحليل المنافسين، تحديد الهدف الجماهيري، خطة محتوى متكاملة، إدارة الحملات الإعلانية المدفوعة.', ['تحليل شامل', 'استراتيجية مخصصة', 'تقارير مفصلة', 'دعم مستمر'])">
+      <h3>استشارة تسويقية</h3>
+      <p>خطة تسويقية شاملة لزيادة مبيعاتك</p>
+      <span class="arrow">→</span>
+    </div>
+
+    <div class="goal-card" onclick="openGoalModal('ريادية', 'استشارة ريادية متخصصة', 'هل مشروعك يحتاج تطوير من الداخل؟ نساعدك تحسن: عرض المنتج، التسعير الاستراتيجي، تجربة العميل، مسار البيع الفعال، الهيكل التنظيمي لمشروعك.', ['تقييم شامل', 'خطة تطوير', 'استشارات مباشرة', 'ورش عمل'])">
+      <h3>استشارة ريادية</h3>
+      <p>تطوير مشروعك من الأساس</p>
+      <span class="arrow">→</span>
+    </div>
+
+    <div class="goal-card" onclick="openGoalModal('Personal Branding', 'استشارة بناء الهوية الشخصية', 'تريد بناء حضور قوي في السوق؟ نساعدك تطور: هويتك الشخصية، استراتيجية المحتوى، إدارة صورتك الاحترافية، جذب الجمهور المناسب لك.', ['تحليل شخصي', 'استراتيجية محتوى', 'إدارة السمعة', 'نمو حقيقي'])">
+      <h3>Personal Branding</h3>
+      <p>بناء علامتك الشخصية القوية</p>
+      <span class="arrow">→</span>
+    </div>
   </div>
-  <small>إذا كنت غير متأكد من الخيارات؟ احجز استشارتك وسوف نساعدك في اختيار المسار الأنسب لك</small>
+  <small>غير متأكد؟ اضغط على أي هدف لتعرف التفاصيل، أو احجز استشارة مجانية لنساعدك اختار المسار الأنسب</small>
 </section>
+
+<!-- Modal لتفاصيل الأهداف -->
+<div id="goalModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeGoalModal()">&times;</span>
+    <div class="goal-modal-header">
+      <div class="goal-modal-icon" id="goalIcon"></div>
+      <h2 id="goalTitle"></h2>
+    </div>
+    <p id="goalDescription" class="goal-description"></p>
+    <div class="goal-features">
+      <h4>ما تتضمنه الاستشارة:</h4>
+      <ul id="goalList"></ul>
+    </div>
+    <div class="goal-modal-footer">
+      <button class="btn" onclick="window.location.href='#contact'">احجز الآن</button>
+      <button class="btn-outline" onclick="closeGoalModal()">إغلاق</button>
+    </div>
+  </div>
+</div>
 
 <section class="compare container">
   <h2>لماذا شركة خارطتي؟</h2>
@@ -153,19 +191,146 @@
 </section>
 
 <section id="team" class="team container">
-  <h2>فريق العمل</h2>
+  <h2>فريق العمل المميز</h2>
+  <p class="team-subtitle">نخبة من الخبراء المحترفين في مجالاتهم</p>
   <div class="team-grid">
-    <div class="team-member"><img src="image/ibrahem.png.png" loading="lazy" alt="ابراهيم"><h3>Dr. Ibrahim</h3><p>Personal Relation & Marketing Manager</p></div>
-    <div class="team-member"><img src="image/dalal.JPG"loading="lazy" alt="دلال"><h3>DR. Dalal</h3><p>Copy writer</p></div>
-    <div class="team-member"><img src="image/amar.jpeg" loading="lazy" alt="محمد عمار"><h3>Dr. Muhammad Ammar</h3><p>Camera man</p></div>
-    <div class="team-member"><img src="image/anas.jpg" loading="lazy" alt="انس"><h3>Anas Salih</h3><p>Social Media coordinator</p></div>
-    <div class="team-member"><img src="image/ahmed.png" loading="lazy" alt="احمد"><h3>Ahmed Bashar</h3><p>Sales assistant & website developer</p></div>
-    <div class="team-member"><img src="image/faris.png" loading="lazy" alt="محمد فارس"><h3>Dr. Mohmmed Faris</h3><p>Graphic designer</p></div>
-    <div class="team-member"><img src="image/ISLAM.PNG" loading="lazy" alt="اسلام"><h3>Islam Salih</h3><p>CEO</p></div>
-     <div class="team-member"><img src="image\shantoha.PNG" loading="lazy" alt="شنطوحه"><h3>SHANTOHA</h3><p>HR</p></div>
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/ibrahem.png.png" loading="lazy" alt="ابراهيم">
+      <div class="team-info">
+        <h3>Dr. Ibrahim</h3>
+        <p class="role">Personal Relation & Marketing Manager</p>
+        <p class="bio" style="display:none;">متخصص في إدارة العلاقات والتسويق الاستراتيجي مع خبرة عملية طويلة</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/dalal.JPG" loading="lazy" alt="دلال">
+      <div class="team-info">
+        <h3>Dr. Dalal</h3>
+        <p class="role">Copy writer</p>
+        <p class="bio" style="display:none;">كاتبة محتوى ومنسقة متخصصة في الكتابة الإبداعية والمحتوى المؤثر</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+
+
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/faris.png" loading="lazy" alt="محمد فارس">
+      <div class="team-info">
+        <h3>Dr. Mohmmed</h3>
+        <p class="role">Graphic designer</p>
+        <p class="bio" style="display:none;">مصمم جرافيك ومتخصص في الهوية البصرية والتصميم الإبداعي</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/amar.jpeg" loading="lazy" alt="محمد عمار">
+      <div class="team-info">
+        <h3>Dr. Muhammad </h3>
+        <p class="role">Camera man</p>
+        <p class="bio" style="display:none;">مصور احترافي متخصص في التصوير الفيديوجرافي والتصوير الفوتوغرافي</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/rasha.png" loading="lazy" alt="د. رشا">
+      <div class="team-info">
+        <h3>Dr. Rasha</h3>
+        <p class="role">Content Writer Assistant</p>
+        <p class="bio" style="display:none;">مساعدة كاتبة محتوى متخصصة في إنتاج المحتوى الإبداعي والتسويقي</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/anas.jpg" loading="lazy" alt="انس">
+      <div class="team-info">
+        <h3>Eng. Anas</h3>
+        <p class="role">Social Media coordinator</p>
+        <p class="bio" style="display:none;">منسق وسائل التواصل الاجتماعي ومدير الحملات الرقمية</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/ISLAM.PNG" loading="lazy" alt="اسلام">
+      <div class="team-info">
+        <h3>Eng. Islam</h3>
+        <p class="role">CEO</p>
+        <p class="bio" style="display:none;">الرئيس التنفيذي والمؤسس برؤية استراتيجية واضحة للنمو المستدام</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+ 
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/ahmed.png" loading="lazy" alt="احمد">
+      <div class="team-info">
+        <h3>Ahmed</h3>
+        <p class="role">Sales assistant & website developer</p>
+        <p class="bio" style="display:none;">مطور مواقع ومساعد مبيعات متخصص في الحلول الرقمية</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
+
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/shantoha.PNG" loading="lazy" alt="شنطوحا">
+      <div class="team-info">
+        <h3>Pet. SHANTOHA</h3>
+        <p class="role">HR</p>
+        <p class="bio" style="display:none;">مديرة الدعم العاطفي للفريق</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
     
+    <div class="team-member" onclick="openTeamModal(this)">
+      <img src="images/bakr2.png" loading="lazy" alt="بكر">
+      <div class="team-info">
+        <h3>Bakr El-aghaa</h3>
+        <p class="role">Video Editor</p>
+        <p class="bio" style="display:none;">محرر فيديو إبداعي متخصص في تحرير وإنتاج المحتوى المرئي</p>
+      </div>
+      <div class="team-overlay">
+        <span class="view-more">اعرف أكتر</span>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- Modal لتفاصيل فريق العمل -->
+<div id="teamModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeTeamModal()">&times;</span>
+    <div class="team-modal-body">
+      <img id="teamModalImg" src="" alt="" class="team-modal-img">
+      <div class="team-modal-info">
+        <h2 id="teamModalName"></h2>
+        <p id="teamModalRole" class="team-modal-role"></p>
+        <p id="teamModalBio" class="team-modal-bio"></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section id="booking" class="booking-calendar container">
     <h2>جدول المواعيد</h2>
@@ -173,7 +338,7 @@
     <div class="calendly-inline-widget" data-url="https://calendly.com/mapteebusiness/30min"></div>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </section>
-  
+
 <section id="contact" class="contact container">
   <div class="contact-whatsapp">
     <h2>احجز استشارتك المجانية</h2>
@@ -194,6 +359,7 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 

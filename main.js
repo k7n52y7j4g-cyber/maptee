@@ -4,17 +4,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Set year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
-  
-  // Create burger menu button if it doesn't exist
-  const header = document.querySelector('.header-inner');
-  if (!document.querySelector('.nav-toggle')) {
-    const navToggle = document.createElement('button');
-    navToggle.className = 'nav-toggle';
-    navToggle.innerHTML = '☰';
-    navToggle.id = 'navToggle';
-    navToggle.onclick = toggleNav;
-    header.appendChild(navToggle);
-  }
 });
 
 function toggleNav() {
